@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  title:string;
+  caption:string;
+
+  constructor(){
+    this.title = 'Angular Project 2';
+    this.caption="Demonstrating bootstrap, observable and CRUD operation";
+  }
 }
