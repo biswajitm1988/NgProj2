@@ -1,3 +1,42 @@
-<p>
-  employee-grid works!
-</p>
+<h3 class="text-center"> Employee List </h3>
+<table class="table bordered-table strpped-table hovered-table">
+  <thead>
+    <th>Emp#</th>
+    <th>Name</th>
+    <th>Designation</th>
+    <th>Gender</th>
+    <th>Salary</th>
+    <th>Date Of Joining</th>
+    <th>Experience(In Yrs)</th>
+    <th>Billable</th>
+    <th>Action</th>
+  </thead>
+  <tfoot>
+    <tr>
+      <th colspan="9" class="text-center">
+        {{emps.length}} Records Found
+      </th>
+    </tr>
+  </tfoot>
+  <tbody>
+    <tr *ngFor="let emp of emps">
+      <td>{{emp.empId}}</td>
+      <td>{{emp.name}}</td>
+      <td>{{getDesignation(emp.designation)}}</td>
+      <td>{{getGender(emp.gender)}}</td>
+      <td>{{emp.salary}}</td>
+      <td>{{emp.doj | date : 'dd-MMM-yyyy'}}</td>
+      <td>{{emp.experience}}</td>
+
+      <ng-template [ngIf]="emp.isBillable">
+        <td>Yes</td>
+      </ng-template>
+      <ng-template [ngIf]="!emp.isBillable">
+        <td>No</td>
+      </ng-template>
+      <td></td>
+
+    </tr>
+  </tbody>
+
+</table>
