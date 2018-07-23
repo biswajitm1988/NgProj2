@@ -12,9 +12,9 @@ export class EmployeesService {
   constructor() {
     this.emps=[
       {empId:1,name:"Biswajit",gender:Gender.MALE,doj:new Date("25-Nov-10"),designation:Designation.Associate,salary:50000,isBillable:true, experience:0},
-      {empId:2,name:"Employee2",gender:Gender.MALE,doj:new Date("10-Nov-10"),designation:Designation.Associate,salary:5000,isBillable:false, experience:0},
-      {empId:3,name:"Employee3",gender:Gender.MALE,doj:new Date("17-Jul-15"),designation:Designation.SeniorAssociate,salary:50000,isBillable:true, experience:0},
-      {empId:4,name:"Employee4",gender:Gender.FEMALE,doj:new Date("17-Jul-15"),designation:Designation.Manager,salary:500000,isBillable:true, experience:0},
+      {empId:2,name:"Employee2",gender:Gender.MALE,doj:new Date("10-Nov-10"),designation:Designation.Associate,salary:50000,isBillable:false, experience:0},
+      {empId:3,name:"Employee3",gender:Gender.MALE,doj:new Date("17-Jul-15"),designation:Designation.SeniorAssociate,salary:80000,isBillable:true, experience:0},
+      {empId:4,name:"Employee4",gender:Gender.FEMALE,doj:new Date("17-Jul-15"),designation:Designation.Manager,salary:120000,isBillable:true, experience:0},
     ];
    }
 

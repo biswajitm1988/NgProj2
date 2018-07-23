@@ -10,13 +10,14 @@ import { EmployeeGridComponent } from './employee-grid/employee-grid.component';
 import { EmployeeFormComponent } from './employee-form/employee-form.component';
 import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
 import { EmployeesService } from './service/employees.service';
+import { EnumPipePipe } from './enum-pipe.pipe';
 
 const pathMappings : Routes = [
   {path:'',component:WelcomeComponent},
   {path:'employees',component:EmployeeGridComponent},
   {path:'addEmployee',component:EmployeeFormComponent},
   {path:'editEmployee/:empId',component:EmployeeFormComponent},
-  {path:'viewEmployee',component:EmployeeDetailsComponent},
+  {path:'viewEmployee/:empId',component:EmployeeDetailsComponent},
   {path:'**', component:PageNotFoundComponent}
 ];
 
@@ -27,7 +28,8 @@ const pathMappings : Routes = [
     PageNotFoundComponent,
     EmployeeGridComponent,
     EmployeeFormComponent,
-    EmployeeDetailsComponent
+    EmployeeDetailsComponent,
+    EnumPipePipe
   ],
   imports: [
     BrowserModule,

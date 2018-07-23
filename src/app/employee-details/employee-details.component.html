@@ -1,3 +1,47 @@
-<p>
-  employee-details works!
-</p>
+<h3 class="text-center"> Employee Details </h3>
+<table class="table bordered-table table-striped table-hover">
+
+
+  <tbody>
+    <tr>
+      <td>Emp#</td>
+      <td>{{emp.empId}}</td>
+    </tr>
+    <tr>
+      <td>Name</td>
+      <td>{{emp.name}}</td>
+    </tr>
+    <tr>
+      <td>Designation</td>
+      <td>{{getDesignation(emp.designation)}}</td>
+    </tr>
+    <tr>
+      <td>Gender</td>
+      <td>{{getGender(emp.gender)}}</td>
+    </tr>
+    <tr>
+      <td>Salary</td>
+      <td>{{emp.salary}}</td>
+    </tr>
+    <tr>
+      <td>Date Of Joining</td>
+      <td>{{emp.doj | date : 'yyyy-MM-dd'}}</td>
+    </tr>
+    <tr>
+      <td>Experience(In Yrs)</td>
+      <td>{{emp.experience}}</td>
+    </tr>
+    <tr>
+      <td>Billable</td>
+      <ng-template [ngIf]="emp.isBillable">
+        <td>Yes</td>
+      </ng-template>
+      <ng-template [ngIf]="!emp.isBillable">
+        <td>No</td>
+      </ng-template>
+    </tr>
+  </tbody>
+  <div class="btn-toolbar">
+    <a routerLink="/employees" class="btn btn-xs btn-default">Back</a>
+  </div>
+</table>

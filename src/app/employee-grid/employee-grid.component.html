@@ -1,5 +1,5 @@
 <h3 class="text-center"> Employee List </h3>
-<table class="table bordered-table strpped-table hovered-table">
+<table class="table bordered-table table-striped table-hover">
   <thead>
     <th>Emp#</th>
     <th>Name</th>
@@ -25,7 +25,7 @@
       <td>{{getDesignation(emp.designation)}}</td>
       <td>{{getGender(emp.gender)}}</td>
       <td>{{emp.salary}}</td>
-      <td>{{emp.doj | date : 'dd-MMM-yyyy'}}</td>
+      <td>{{emp.doj | date : 'yyyy-MM-dd'}}</td>
       <td>{{emp.experience}}</td>
 
       <ng-template [ngIf]="emp.isBillable">
@@ -34,7 +34,12 @@
       <ng-template [ngIf]="!emp.isBillable">
         <td>No</td>
       </ng-template>
-      <td></td>
+      <td>
+        <div class="btn-toolbar">
+          <a routerLink="/editEmployee/{{emp.empId}}" class="btn btn-xs btn-primary">EDIT</a>
+          <button (click)="deleteEmployee(emp)" class="btn btn-xs btn-danger">DELETE</button>
+        </div>
+      </td>
 
     </tr>
   </tbody>

@@ -22,9 +22,9 @@
       </ul>
       <form class="navbar-form navbar-right">
         <div class="input-group">
-          <input type="text" name="empId" placeholder="Search By Employee Id" class="form-control">
+          <input type="text" name="empId" [(ngModel)]='empId' placeholder="Search By Employee Id" class="form-control">
           <div class="input-group-btn">
-            <button class="btn btn-default">
+            <button class="btn btn-default"  [routerLink]="['/viewEmployee',empId]">
               <i class="glyphicon glyphicon-search"></i>
             </button>
           </div>
